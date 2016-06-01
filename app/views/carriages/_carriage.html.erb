@@ -1,0 +1,16 @@
+<tr>
+  <td><%= carriage.id %></td>
+  <td><%= Train.find(carriage.train_id).number %></td>
+  <% if carriage.category == "C" %>
+    <td><%= "Купе" %></td>
+  <% elsif carriage.category == "P" %>
+    <td><%= "Плацкарт" %></td>
+  <% else %>
+    <%= "" %>
+  <% end %>
+  <td><%= carriage.upper %></td>
+  <td><%= carriage.lower %></td>
+  <td><%= link_to 'Показать', carriage %></td>
+  <td><%= link_to 'Редактировать', edit_carriage_path(carriage) %></td>
+  <td><%= link_to 'Удалить', carriage, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+</tr>
