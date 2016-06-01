@@ -1,6 +1,6 @@
 <tr>
   <td><%= carriage.id %></td>
-  <td><%= Train.find(carriage.train_id).number %></td>
+  <td><%= carriage.train.number %></td>
   <% if carriage.category == "C" %>
     <td><%= "Купе" %></td>
   <% elsif carriage.category == "P" %>
