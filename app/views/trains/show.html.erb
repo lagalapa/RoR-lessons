@@ -10,5 +10,14 @@
   <%= @train.route.present? ? @train.route.name : "Маршрут не назначен" %>
 </p>
 
+<p>
+  <strong>Вагоны:</strong>
+  Купейные: <%= @train.cars_by_cat("C").count %>,
+  места (верхние/нижние): <%= @train.upper("C") %>/<%= @train.lower("C") %>;
+  Плацкартные: <%= @train.cars_by_cat("P").count %>,
+  места (верхние/нижние): <%= @train.upper("P") %>/<%= @train.lower("P") %>
+</p>
+
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
