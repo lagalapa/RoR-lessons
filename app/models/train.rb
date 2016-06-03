@@ -10,10 +10,10 @@ class Train < ActiveRecord::Base
   end
 
   def upper(category)
-    carriages.where(category: category).to_a.inject(0){ |sum, c| sum + c.upper }
+    cars_by_cat(category).to_a.inject(0){ |sum, car| sum + car.upper }
   end
 
   def lower(category)
-    carriages.where(category: category).to_a.inject(0){ |sum, c| sum + c.lower }
+    cars_by_cat(category).to_a.inject(0){ |sum, car| sum + car.lower }
   end
 end
